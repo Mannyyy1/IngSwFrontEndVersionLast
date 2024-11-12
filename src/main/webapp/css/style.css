@@ -1,0 +1,306 @@
+/*--- ------------------------------------ Contenuto iniziale/predefinito -------------------------------------------*/
+
+/* Sezione principale del documento html */
+body{
+    /*selezione del carattere*/
+    font-family: Inter, sans-serif;
+    /*dimensione del carattere*/
+    font-size: 16px;
+    /*testo normale*/
+    font-style: normal;
+    /*peso di un font*/
+    font-weight: normal;
+    /*allineamento del testo*/
+    text-align: left;
+    /*altezza della riga*/
+    line-height: 1.5;
+    /*sfondo*/
+    background-color:white;
+    /* 1. margine - creo spazio attorno agli elementi, al di fuori di qualsiasi bordo definito.
+       2. box-sizing - include la spaziatura e il bordo nella larghezza e nell'altezza totali di un elemento*/
+    margin: 0;}* {box-sizing:border-box;
+                   border-width: 0;
+                   border-style: solid;}
+
+p,div,h1,h2,h3,h4,h5,h6  {
+    margin: 0;
+    padding: 0;
+}
+
+/*Stile testo e margine all'interno dei campi*/
+button,input,optgroup,select,textarea {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.5;
+    margin: 0;
+}
+/* Stile hyperlink */
+a {
+    text-decoration: none;
+}
+
+/*------------------------------------------------ Spesso Riutilizzate ------------------------------------------------*/
+
+/* Padding utilizzato per creare spazio attorno al contenuto di un elemento, all'interno di eventuali bordi definiti*/
+.thq-section-padding {
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Proprietà predefinite CSS Width, utilizzata per definire la larghezza massima di un elemento */
+.thq-section-max-width {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Proprietà predefinite contenitore CSS Flex */
+.thq-flex-column {
+    gap:32px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+/*-------------------------------------- Per eventuali adattamenti interfacce (responsive web design) ----------------*/
+@media(max-width: 767px) {
+    .thq-section-padding {
+        padding: 32px;
+    }
+    .thq-flex-column {
+        gap: 16px;
+    }
+}
+@media(max-width: 479px) {
+    .thq-section-padding {
+        padding: 16px;
+    }
+    .thq-flex-column {
+        gap: 11px;
+    }
+}
+
+/*-------------------------------------------------- header --------------------------------------------------------*/
+
+/*spazio attorno al contenuto di un elemento, all'interno di eventuali bordi definiti*/
+.paddingNavbar {
+    width: 100%;
+    background-color: #007FFF;
+    display: flex;
+    align-items: center;
+    padding: 24px 80px;
+    justify-content: space-between;
+    position: relative;
+    flex-direction: row;
+}
+
+/* Stile logo*/
+.logoNavbar {
+    /*dimensione*/
+    width: 96px;
+    height: 96px;
+    /*crea spazio nel lato sx dell'elemento*/
+    margin-left:-20px;
+}
+
+/* Stile Menu di navigazione: posizione*/
+.linkNavbar {
+    gap: 32px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* Stile link Menu di navigazione */
+.textNavbar {
+    color: #EFEFEF;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+/* Cambia colore al link al passaggio del mouse */
+.textNavbar:hover {
+    color: #4F4F4F;
+}
+
+/*----------------- Mobile Navigation Bar (vertical) ---------------*/
+
+/*container logo + icona menu*/
+.navbar-burger-menu, .navbar-links-mobile, #myLinks{
+    /* comportamento display: non visualizzato (su desktop) */
+    display: none;
+
+}
+/*-------------------------------------- Per eventuali adattamenti interfacce (responsive web design) ----------------*/
+@media(max-width: 767px) {
+    .linkNavbar {
+        display: none;
+    }
+    /* Stile Hamburger Menu */
+    .navbar-burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Stile Navigation menu (mobile)*/
+    .navbar-links-mobile {
+        width: 100%;
+        background-color: #007FFF;
+        /* La flex proprietà è una proprietà abbreviata per le proprietà flex-grow, flex-shrink, e flex-basis */
+        display: flex;
+        flex: 0 0 auto;
+        position: relative;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        padding: 32px;
+
+    }
+    .paddingNavbar {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+@media(max-width: 479px) {
+    .logoNavbar {
+        width: 48px;
+        height: 48px;
+        margin-left: -5px;
+    }
+    .paddingNavbar {
+        padding: 16px;
+    }
+    .navbar-links-mobile{
+        padding: 16px;
+    }
+    /* Stile icona Hamburger */
+    svg{
+        height: 32px;
+        width: 32px;
+    }
+}
+
+/*--------------------------------------------------- footer ---------------------------------------------------------*/
+
+footer {
+    display: block;
+    background-color: #007FFF;
+    width: 100%;
+    padding-top: 48px;
+    padding-bottom: 16px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/*Container contenuto*/
+.footerContent {
+    gap: 128px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    flex-direction: row;
+}
+
+/*Container logo-citazione */
+.footerCitation{
+    gap: 8px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+/*Stile logo*/
+.logoFooter {
+    width: 96px;
+    height: 96px;
+    margin-left:-20px;
+}
+/*Stile testo citazione*/
+.textCitation {
+    color: #EFEFEF;
+    font-size: 14px;
+    font-style: oblique;
+}
+
+/*Container menu con tutte le colonne */
+.footerMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+/*Container colonna con titolo e rispettivi link */
+.containerColumn {
+    gap: 16px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-right: 24px;
+}
+/*Stile titolo colonna */
+strong {
+    color: #EFEFEF;
+    font-size: 18px;
+}
+/*Container link all'interno del Menu*/
+.verticalMenu {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+/*Stile link*/
+.textFooter {
+    color: #EFEFEF;
+}
+
+/*Container credits */
+.footerCredits {
+    gap: 16px;
+    display: flex;
+    margin-top: 32px;
+    flex-direction: column;
+}
+/*divisore*/
+.divider {
+    background-color: #EFEFEF;
+    width: 100%;
+    height: 1px;
+}
+/*Stile testo credits*/
+.footerContentCredits {
+    color: #EFEFEF;
+    font-size: 10px;
+}
+/*-------------------------------------- Per eventuali adattamenti interfacce (responsive web design) ----------------*/
+@media(max-width: 767px) {
+    .footerContent {
+        gap: 32px;
+        flex-direction: column;
+    }
+    .footerMenu {
+        width: 100%;
+    }
+    footer{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+@media(max-width: 479px) {
+    .footerMenu {
+        flex-direction: column;
+        gap:32px;
+    }
+    footer{
+        padding: 16px;
+    }
+}

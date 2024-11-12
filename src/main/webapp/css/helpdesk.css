@@ -1,0 +1,325 @@
+/*--------------------------------  Stile titolo  ------------------------------------*/
+.sectionTitle {
+    gap: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+h1 {
+    display: block;
+    font-size: 64px;
+    font-weight: 600;
+    text-align:left;
+}
+
+/*----------------------------------- Stile Form Nuovo Ticket ------------------------------------------------*/
+
+fieldset{
+    gap: 32px; /*spazio tra gli elementi del modulo */
+    width: 100%;
+    overflow: hidden; /*L'overflow viene ritagliato e il resto del contenuto sarà invisibile*/
+    position: relative; /*Posiziona l'elemento relativamente alla posizione che assumerebbe normalmente il normal flow */
+    display: flex; /* usa il flexbox per il layout */
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #2F2F2F;/* stile bordi */
+    border-radius: 16px; /*angolo arrtondati */
+}
+
+legend{
+    display: block;
+    font-weight: 600;
+    font-size: 28px;
+    color: #4F4F4F;
+}
+
+/*Container per riga*/
+.container {
+    gap: 16px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+/*Container label+input 50%*/
+.inputForm {
+    gap: 8px;
+    width: 50%;
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+/*input type text,email,tel FORM*/
+input[type=text],
+input[type=email],
+input[type=tel]{
+    /*cursore del mouse*/
+    cursor: auto;
+    outline: none;
+    padding: 8px;
+    border: 2px solid #E1E1E1;
+    border-radius: 8px;
+    align-self: stretch;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus {
+    border-color: #2F2F2F;
+}
+
+/*select FORM*/
+select {
+    cursor: pointer;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #E1E1E1;
+    border-radius: 8px;
+}
+/*Assegna uno stile a un campo di input quando è attivo*/
+select:focus {
+    border-color: #2F2F2F;
+}
+
+/*Container label+input (larghezza 100%) per textarea e input type file*/
+.inputForm100 {
+    gap: 8px;
+    width: 100%;
+    display: flex;
+    align-self: stretch;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+/*area di testo FORM, utilizzo l'id per evitare ambiguità con il textarea all'interno del ticket*/
+#detail {
+    cursor: auto;
+    width: 100%;
+    height: 150px;
+    padding: 8px;
+    border: 2px solid #E1E1E1;
+    border-radius: 8px;
+    /*ridimensiona l'altezza*/
+    resize: vertical;
+}
+#detail:focus {
+    border-color: #2F2F2F;
+}
+
+hr{
+    height: 2px;
+    width: 100%;
+    background-color: #EFEFEF;
+    margin-top: 32px;
+}
+
+/*----------------------------------- Stili di base per i ticket e gli elementi ------------------------------------*/
+
+/*1 - container principale per filtro + ticket*/
+.ticket-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+}
+/*2 - container per filtro*/
+.containerFiltro{
+    gap: 8px;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 32px;
+}
+/* Stile immagine */
+.image {
+    width: 32px;
+    height: 32px;
+}
+
+/*Proprietà ticket: stile della fisarmonica:*/
+.ticketHeader {
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #E1E1E1;
+    border: none;
+    padding: 16px;
+    width: 100%;
+    outline: none;
+    display: flex;
+    align-self: stretch;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.active, .ticketHeader:hover {
+    background-color: #D2D2D2;
+}
+/* Aggiungere un simbolo a ciascun pulsante per indicare se il contenuto comprimibile è aperto o chiuso */
+.ticketHeader:after {
+    content: "+";
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 16px;
+
+}
+.active:after {
+    content: "-";
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 16px;
+}
+
+h4{
+    color: #2F2F2F;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+h3{
+    color: #2F2F2F;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+/* Stile colore stato ticket */
+.colourStatus {
+    display: inline-block; /* O flex */
+    width: 150px; /* Imposta una larghezza fissa */
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    border: #2F2F2F 2px solid;
+    padding: 8px 16px;
+}
+/* Stile contenuto ticket */
+.ticketBody {
+    background-color: white;
+    border: 2px solid #D2D2D2;
+    border-top: none;
+    display: none;
+    padding: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+/* Container dati da visualizzare */
+.containerDati{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.colonna {
+    gap: 16px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-right: 24px;
+}
+
+.strongTitle{
+    color: black;
+    margin-right: 5px;
+}
+
+.elencoDati {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#textAnswer {
+    cursor: auto;
+    width: 100%;
+    height: 200px;
+    padding: 8px;
+    border: 2px solid #E1E1E1;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 16px;
+    margin-top: 32px;
+}
+#textAnswer:focus {
+    border-color: #2F2F2F;
+}
+
+input[type=submit] {
+    color: white;
+    background-color: #007FFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s;
+    float: right;
+}
+input[type=submit]:hover {
+    background-color: #08457E;
+}
+
+/*Container per History*/
+.containerHistory{
+    gap: 8px;
+    display: flex;
+    align-self: flex-end;
+    align-items: initial;
+    flex-direction: column;
+    margin-top: 48px;
+}
+/*Container per titolo History*/
+.titleHistory{
+    display: flex;
+    align-items: center;
+}
+/*Container per elenco dati History*/
+.elencoHistory{
+    gap: 8px;
+    display: flex;
+    flex-direction: row;
+
+}
+/*Container per bottoni annullamento/chiusura ticket*/
+.containerChiusura{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonChiusura{
+    background-color: #EFEFEF;
+    color: black;
+    border:none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    font-weight: normal;
+    border-radius: 4px;
+    padding:8px 16px;
+    width: 180px;
+    justify-content: center;
+}
+.buttonChiusura:hover {
+    background-color: #C0C0C0;
+}
+
+/* Spazio tra i ticket */
+.ticket {
+    margin-top: 8px;
+}

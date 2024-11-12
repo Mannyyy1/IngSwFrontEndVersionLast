@@ -1,0 +1,275 @@
+/*------------------------------------------------- Sezione Argomenti --------------------------------------------*/
+/*padding con modifica*/
+.argPadding {
+    padding-bottom: 0;
+}
+
+/*max-width con modifica*/
+.arg-max-width {
+    gap: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*container titolo & barra di ricerca*/
+.containerTitle {
+    gap: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/*Intestazione HTML*/
+h1 {
+    display: block;
+    font-size: 64px;
+    font-weight: 600;
+    text-align:left;
+}
+
+/*Container barra di ricerca*/
+.containerBarra {
+    display: flex;
+    align-self: stretch;
+    /*allinea gli elementi flessibili al centro del contenitore*/
+    align-items: center;
+    /*impila gli elementi flessibili orizzontalmente (da sinistra a destra)*/
+    flex-direction: row;
+    gap: 16px;
+}
+/*Stile immagine lente di ricerca*/
+.imageSearch {
+    width: 32px;
+    height: 32px;
+}
+/*Stile Barra di ricerca*/
+input[type=search] {
+    width: 100%;
+    border:none;
+    cursor: auto;
+    /*Non definisce alcun contorno, ossia la linea tracciata attorno agli
+    elementi, fuori dai bordi, per far "risaltare" l'elemento */
+    outline: none;
+    transition: 0.4s;
+}
+input[type=search]:focus {
+    border-bottom: 1px solid #2F2F2F;
+}
+
+/*container titolo + 6 argomenti principali*/
+.containerArg {
+    gap:16px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*intestazione HTML*/
+h2 {
+    display: block;
+    color: black;
+    font-size: 28px;
+    font-weight: 600;
+    text-align:left;
+}
+
+/*Stile Grid Container*/
+.thq-grid-3 {
+    /*proprietà fondamentale*/
+    display: grid;
+    /*spazio tra righe e colonne in un unico valore*/
+    grid-gap: 32px;
+    /*crea un contenitore a griglia con 3 colonne*/
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*Stile button Argomento*/
+.buttonArg {
+    background-color: #EFEFEF;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+}
+.buttonArg:hover {
+    background-color: #E1E1E1;
+}
+
+/*Stile immagine button*/
+.imageArg {
+    width: 96px;
+    height: 96px;
+}
+/*Intestazione button*/
+h4 {
+    color: #2F2F2F;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+}
+/*Stile testo button*/
+.textButton {
+    color: #808080;
+    font-size: 16px;
+    text-align: center;
+}
+
+/*Container button FAQ*/
+.containerButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Stile button FAQ*/
+.buttonFaq {
+    color: white;
+    background-color: #007FFF;
+    cursor: pointer;
+    border:none;
+    transition-duration: 0.3s;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 430px;
+}
+/* Cambia sfondo del button quando si passa sopra con il mouse*/
+.buttonFaq:hover {
+    background: #08457E;
+}
+
+/*Stile divisore*/
+hr {
+    height: 2px;
+    width: 100%;
+    background-color: #EFEFEF;
+}
+
+/*-------------------------------------------Sezione Metodi di contatto ----------------------------------------------*/
+/*padding con modifica*/
+.contactPadding {
+    padding-top: 32px;
+}
+
+/*max-width con modifica*/
+.contact-max-width {
+    gap: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*intestazione HTML*/
+h3 {
+    color: #2F2F2F;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/*Stile Grid Container*/
+.thq-grid-3-contact{
+    display: grid;
+    /* spazio tra le colonne*/
+    column-gap: 128px;
+    /* spazio tra le righe*/
+    row-gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*container link*/
+.containerLink {
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+/*Stile immagine tipologia Contatto*/
+.imageContact {
+    width: 144px;
+    height: 144px;
+    align-self: center;
+}
+
+/*Stile button link alle varie pagine Contatto*/
+.buttonContact {
+    color: white;
+    background-color: #007FFF;
+    cursor: pointer;
+    border:none;
+    border-radius: 8px;
+    transition-duration: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    font-weight: 600;
+    width: 100%;
+}
+.buttonContact:hover {
+    background: #08457E;
+}
+
+/*---------------------------------- Per eventuali adattamenti (responsive web design) -------------------------------*/
+@media(max-width: 1200px) {
+    .buttonFaq {
+        width: 320px;
+    }
+}
+@media(max-width: 991px) {
+    .buttonFaq {
+        width: 252px;
+    }
+}
+@media(max-width: 767px) {
+    .buttonArg {
+        padding: 24px;
+    }
+    .buttonFaq {
+        width: 100%;
+    }
+    .thq-grid-3 {
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .thq-grid-3-contact{
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 479px) {
+    h1 {
+        font-size: 48px;
+    }
+    h2 {
+        font-size: 21px;
+    }
+    .buttonFaq {
+        width: 100%;
+    }
+    .thq-grid-3 {
+        grid-gap: 16px;
+        align-items: center;
+        grid-template-columns: 1fr;
+    }
+    .thq-grid-3-contact{
+        grid-gap: 32px 16px;
+        align-items: center;
+        grid-template-columns: 1fr;
+    }
+}
